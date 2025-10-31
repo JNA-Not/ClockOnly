@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация - ClockOnly</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <a href="../html/index.html">
+                <img src="../../static/logo.jpg" alt="ClockOnly - Продажа, скупка и ремонт часов" class="logo-image">
+            </a>
+        </div>
+        <div class="brand">
+            <h1>ClockOnly</h1>
+        </div>
+        <div class="contact-phone">
+            <i>📞</i> +7 (777) 77-77-77
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="auth-main">
+        <div class="auth-container">
+            <div class="auth-card">
+                <div class="auth-header">
+                    <h2>Добро пожаловать</h2>
+                    <p>Войдите в свой аккаунт или создайте новый</p>
+                </div>
+
+                <!-- Форма входа -->
+                <form class="auth-form" id="loginForm">
+                    <h3>Вход в аккаунт</h3>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" name="password" required placeholder="Введите пароль">
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox">
+                            <input type="checkbox" name="remember">
+                            <span>Запомнить меня</span>
+                        </label>
+                        <a href="#" class="forgot-password">Забыли пароль?</a>
+                    </div>
+
+                    <button type="submit" class="auth-button">Войти</button>
+                </form>
+
+                <!-- Разделитель -->
+                <div class="auth-divider">
+                    <span>или</span>
+                </div>
+
+                <!-- Форма регистрации -->
+                <form class="auth-form" id="registerForm" style="display: none;">
+                    <h3>Создать аккаунт</h3>
+                    
+                    <div class="form-group">
+                        <label for="regName">Имя</label>
+                        <input type="text" id="regName" name="name" required placeholder="Ваше имя">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regEmail">Email</label>
+                        <input type="email" id="regEmail" name="email" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPhone">Телефон</label>
+                        <input type="tel" id="regPhone" name="phone" required placeholder="+7 (777) 777-77-77">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regPassword">Пароль</label>
+                        <input type="password" id="regPassword" name="password" required placeholder="Минимум 6 символов">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Подтвердите пароль</label>
+                        <input type="password" id="regConfirmPassword" name="confirmPassword" required placeholder="Повторите пароль">
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox">
+                            <input type="checkbox" name="agreement" required>
+                            <span>Я согласен с <a href="#">условиями использования</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="auth-button">Зарегистрироваться</button>
+                </form>
+
+                <!-- Переключатель форм -->
+                <div class="auth-switch">
+                    <p id="switchText">Нет аккаунта? <a href="#" id="switchLink">Зарегистрироваться</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О компании ClockOnly</h3>
+                <p>Мы специализируемся на продаже, скупке и ремонте часов различных брендов.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>📞 Телефон: +7 (777) 77-77-77</p>
+                <p>✉️ Email: clockonly@mail.ru</p>
+                <p>📍 Адрес: г. Владимир, ул. Юбилейная, д. 14А</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 ClockOnly. Все права защищены.
+        </div>
+    </footer>
+
+    <script src="../js/scr.js"></script>
+</body>
+</html>

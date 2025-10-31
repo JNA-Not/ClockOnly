@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClockOnly - Продажа, скупка и ремонт часов</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <a href="../html/index.html">
+                <img src="../../static/logo.jpg" alt="ClockOnly - Продажа, скупка и ремонт часов" class="logo-image">
+            </a>
+        </div>
+        <div class="brand">
+            <h1>ClockOnly</h1>
+        </div>
+        <div class="contact-phone">
+            <i>📞</i> +7 (777) 77-77-77
+        </div>
+    </header>
+    
+    <!-- Основной контент -->
+    <main>
+        <!-- Циферблат - ПЕРВЫЙ -->
+        <section class="clock-section">
+            <div class="clock-container">
+                <div class="clock-face">
+                    <div class="clock-center"></div>
+                    <div class="clock-markers" id="clockMarkers"></div>
+                    <div class="clock-hands">
+                        <div class="hour-hand" id="hourHand"></div>
+                        <div class="minute-hand" id="minuteHand"></div>
+                    </div>
+                    
+                    <!-- Кнопки навигации на циферблате -->
+                    <a href="../html/login.html" class="clock-button button-12" data-hour="0">Авторизация</a>
+                    <a href="#advantages" class="clock-button button-1" data-hour="1">Наши преимущества</a>
+                    <a href="#news" class="clock-button button-2" data-hour="2">Последние новости</a>
+                    <a href="#catalog" class="clock-button button-3" data-hour="3">Каталог</a>
+                    <a href="#about" class="clock-button button-4" data-hour="4">О нас</a>
+                    <a href="../html/skup.html" class="clock-button button-5" data-hour="5">Скупка часов</a>
+                   <a href="../html/remont.html" class="clock-button button-6" data-hour="6">Ремонт</a>
+                    <a href="../html/korzina.html" class="clock-button button-7" data-hour="7">Корзина</a>
+                    <a href="../html/otz.html" class="clock-button button-8" data-hour="8">Отзывы</a>
+                    <a href="#warranty" class="clock-button button-9" data-hour="9">Гарантия</a>
+                    <a href="../html/help.html" class="clock-button button-10" data-hour="10">Поддержка</a>
+                    <a href="../html/rab.html" class="clock-button button-11" data-hour="11">Работа у нас</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок преимуществ - ВТОРОЙ -->
+        <section class="advantages-section" id="advantages">
+            <div class="container">
+                <h2 class="section-title">Наши преимущества</h2>
+                <div class="advantages-grid">
+                    <div class="advantage-card">
+                        <div class="advantage-icon">⏱️</div>
+                        <h3>Быстрая оценка</h3>
+                        <p>Оценка ваших часов онлайн за 15 минут с гарантией лучшей цены</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">🔧</div>
+                        <h3>Профессиональный ремонт</h3>
+                        <p>Ремонт любой сложности с гарантией качества и использованием оригинальных запчастей</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">🛡️</div>
+                        <h3>Гарантия подлинности</h3>
+                        <p>Все часы проходят тщательную проверку на подлинность и сертификацию</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">🚚</div>
+                        <h3>Бесплатная доставка</h3>
+                        <p>Бесплатная курьерская доставка по всей России при покупке от 50 000₽</p>
+                    </div>
+                    <div class="advantage-card">
+                        <div class="advantage-icon">💎</div>
+                        <h3>Эксклюзивные модели</h3>
+                        <p>Уникальная коллекция редких и лимитированных моделей часов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок новостей - ТРЕТИЙ -->
+        <section class="news-section" id="news">
+            <div class="container">
+                <h2 class="section-title">Последние новости</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/300x200/1E2A3A/FFFFFF?text=Rolex+2024" alt="Новые модели Rolex 2024">
+                        </div>
+                        <div class="news-content">
+                            <time class="news-date" datetime="2024-01-15">15 января 2024</time>
+                            <h3 class="news-title">Новые модели Rolex 2024</h3>
+                            <p class="news-excerpt">В этом году Rolex представил обновленные версии культовых моделей с инновационными технологиями...</p>
+                            <a href="#" class="news-button">Читать далее</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/300x200/00A896/FFFFFF?text=Ремонт+Omega" alt="Секреты ремонта часов Omega">
+                        </div>
+                        <div class="news-content">
+                            <time class="news-date" datetime="2024-01-10">10 января 2024</time>
+                            <h3 class="news-title">Секреты ремонта часов Omega</h3>
+                            <p class="news-excerpt">Наши мастера раскрывают профессиональные секреты обслуживания механических часов Omega...</p>
+                            <a href="#" class="news-button">Читать далее</a>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://via.placeholder.com/300x200/0288D1/FFFFFF?text=Инвестиции+в+часы" alt="Часы как инвестиция">
+                        </div>
+                        <div class="news-content">
+                            <time class="news-date" datetime="2024-01-05">5 января 2024</time>
+                            <h3 class="news-title">Часы как выгодная инвестиция в 2024</h3>
+                            <p class="news-excerpt">Эксперты анализируют рынок luxury-часов и дают прогнозы по самым перспективным моделям для инвестиций...</p>
+                            <a href="#" class="news-button">Читать далее</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок каталога - ЧЕТВЕРТЫЙ -->
+        <section class="catalog-section" id="catalog">
+            <div class="container">
+                <h2 class="section-title">Каталог часов</h2>
+                <div class="catalog-grid">
+                    <div class="catalog-category">
+                        <h3>Rolex</h3>
+                        <ul>
+                            <li><a href="#">Submariner</a></li>
+                            <li><a href="#">Daytona</a></li>
+                            <li><a href="#">Datejust</a></li>
+                            <li><a href="#">GMT-Master</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog-category">
+                        <h3>Omega</h3>
+                        <ul>
+                            <li><a href="#">Seamaster</a></li>
+                            <li><a href="#">Speedmaster</a></li>
+                            <li><a href="#">Constellation</a></li>
+                            <li><a href="#">De Ville</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog-category">
+                        <h3>Patek Philippe</h3>
+                        <ul>
+                            <li><a href="#">Nautilus</a></li>
+                            <li><a href="#">Aquanaut</a></li>
+                            <li><a href="#">Calatrava</a></li>
+                            <li><a href="#">Complications</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog-category">
+                        <h3>Audemars Piguet</h3>
+                        <ul>
+                            <li><a href="#">Royal Oak</a></li>
+                            <li><a href="#">Royal Oak Offshore</a></li>
+                            <li><a href="#">Millenary</a></li>
+                            <li><a href="#">Code 11.59</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog-category">
+                        <h3>Cartier</h3>
+                        <ul>
+                            <li><a href="#">Tank</a></li>
+                            <li><a href="#">Santos</a></li>
+                            <li><a href="#">Ballon Bleu</a></li>
+                            <li><a href="#">Pasha</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog-category">
+                        <h3>Breitling</h3>
+                        <ul>
+                            <li><a href="#">Navitimer</a></li>
+                            <li><a href="#">Chronomat</a></li>
+                            <li><a href="#">Superocean</a></li>
+                            <li><a href="#">Avenger</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog-category">
+                        <h3>IWC</h3>
+                        <ul>
+                            <li><a href="#">Pilot's Watches</a></li>
+                            <li><a href="#">Portugieser</a></li>
+                            <li><a href="#">Ingenieur</a></li>
+                            <li><a href="#">Aquatimer</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog-category">
+                        <h3>Tag Heuer</h3>
+                        <ul>
+                            <li><a href="#">Carrera</a></li>
+                            <li><a href="#">Monaco</a></li>
+                            <li><a href="#">Aquaracer</a></li>
+                            <li><a href="#">Formula 1</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog-category">
+                        <h3>Hublot</h3>
+                        <ul>
+                            <li><a href="#">Big Bang</a></li>
+                            <li><a href="#">Classic Fusion</a></li>
+                            <li><a href="#">Spirit of Big Bang</a></li>
+                            <li><a href="#">MP Collection</a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog-category">
+                        <h3>Vacheron Constantin</h3>
+                        <ul>
+                            <li><a href="#">Overseas</a></li>
+                            <li><a href="#">Patrimony</a></li>
+                            <li><a href="#">Traditionnelle</a></li>
+                            <li><a href="#">Historiques</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок "О нас" - ПЯТЫЙ -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <h2 class="section-title">О компании ClockOnly</h2>
+                <div class="about-content">
+                    <div class="about-hero">
+                        <div class="about-text">
+                            <h3>Ваш надежный партнер в мире luxury-часов</h3>
+                            <p class="lead">Более 10 лет мы помогаем ценителям часов находить идеальные модели, сохранять их безупречное состояние и делать выгодные инвестиции.</p>
+                            
+                            <div class="mission-vision">
+                                <div class="mission">
+                                    <div class="mission-icon">🎯</div>
+                                    <h4>Наша миссия</h4>
+                                    <p>Сделать мир премиальных часов доступным и понятным для каждого ценителя, обеспечивая высочайший уровень сервиса и гарантию подлинности.</p>
+                                </div>
+                                <div class="vision">
+                                    <div class="vision-icon">🔭</div>
+                                    <h4>Наше видение</h4>
+                                    <p>Стать ведущим часовым центром России, устанавливающим стандарты качества в продаже, скупке и обслуживании часов премиальных брендов.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="about-visual">
+                            <div class="visual-card">
+                                <div class="visual-icon">⌚</div>
+                                <div class="visual-text">Эксперты в мире часов</div>
+                            </div>
+                            <div class="visual-card">
+                                <div class="visual-icon">🛡️</div>
+                                <div class="visual-text">Гарантия подлинности</div>
+                            </div>
+                            <div class="visual-card">
+                                <div class="visual-icon">⭐</div>
+                                <div class="visual-text">Премиальное обслуживание</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-text">Лет на рынке</div>
+                            <div class="stat-description">Успешной работы с 2014 года</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-text">Довольных клиентов</div>
+                            <div class="stat-description">По всей России и СНГ</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-text">Брендов в каталоге</div>
+                            <div class="stat-description">От классики до современных моделей</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">15,000+</div>
+                            <div class="stat-text">Часов отремонтировано</div>
+                            <div class="stat-description">Профессиональный сервис</div>
+                        </div>
+                    </div>
+                    
+                    <div class="values-section">
+                        <h3>Наши ценности</h3>
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <div class="value-icon">💎</div>
+                                <h4>Экспертиза</h4>
+                                <p>Наши специалисты ежегодно проходят обучение у официальных производителей и имеют сертификаты международного уровня.</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">🤝</div>
+                                <h4>Честность</h4>
+                                <p>Прозрачные условия сделок, честная оценка и полная информация о состоянии каждого экземпляра.</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">⚡</div>
+                                <h4>Скорость</h4>
+                                <p>Быстрая оценка за 15 минут, срочный ремонт за 24 часа и оперативная доставка по всей России.</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">🛡️</div>
+                                <h4>Надежность</h4>
+                                <p>Гарантия до 2 лет на все виды работ, использование только оригинальных запчастей и полная ответственность.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-section">
+                        <h3>Наша команда</h3>
+                        <div class="team-grid">
+                            <div class="team-member">
+                                <div class="member-photo">👨‍💼</div>
+                                <h4>Антон Волков</h4>
+                                <p class="member-role">Основатель, эксперт по Rolex</p>
+                                <p class="member-bio">15 лет в часовом бизнесе, сертифицированный специалист Rolex</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-photo">👩‍🔧</div>
+                                <h4>Мария Соколова</h4>
+                                <p class="member-role">Главный часовщик</p>
+                                <p class="member-bio">Опыт ремонта сложных механизмов более 12 лет</p>
+                            </div>
+                            <div class="team-member">
+                                <div class="member-photo">👨‍💻</div>
+                                <h4>Дмитрий Иванов</h4>
+                                <p class="member-role">Эксперт по оценке</p>
+                                <p class="member-bio">Сертифицированный оценщик luxury-брендов</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certificates-section">
+                        <h3>Наши сертификаты</h3>
+                        <div class="certificates-grid">
+                            <div class="certificate">
+                                <div class="cert-icon">📜</div>
+                                <h4>Официальный партнер Rolex</h4>
+                                <p>Сертификат авторизованного сервисного центра</p>
+                            </div>
+                            <div class="certificate">
+                                <div class="cert-icon">🏆</div>
+                                <h4>Лучший часовой сервис 2023</h4>
+                                <p>Премия Russian Watch Awards</p>
+                            </div>
+                            <div class="certificate">
+                                <div class="cert-icon">⭐</div>
+                                <h4>ISO 9001:2015</h4>
+                                <p>Сертификат качества менеджмента</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     <!-- Блок гарантий - ШЕСТОЙ -->
+        <section class="warranty-section" id="warranty">
+            <div class="container">
+                <h2 class="section-title">Наши гарантии</h2>
+                <div class="warranty-content">
+                    <div class="warranty-intro">
+                        <h3>Мы гарантируем качество и надежность</h3>
+                        <p>В ClockOnly мы понимаем, что часы - это не просто аксессуар, а инвестиция в стиль и точность. Поэтому мы предоставляем комплексные гарантии на все наши товары и услуги.</p>
+                    </div>
+                    
+                    <div class="warranty-grid">
+                        <div class="warranty-card">
+                            <div class="warranty-icon">🛡️</div>
+                            <h4>Гарантия подлинности</h4>
+                            <p>Все часы проходят многоуровневую проверку на подлинность. Мы предоставляем сертификаты и гарантируем 100% оригинальность.</p>
+                            <div class="warranty-period">Бессрочно</div>
+                        </div>
+                        
+                        <div class="warranty-card">
+                            <div class="warranty-icon">⚙️</div>
+                            <h4>Гарантия на ремонт</h4>
+                            <p>На все виды ремонтных работ предоставляем гарантию до 2 лет. Используем только оригинальные запчасти.</p>
+                            <div class="warranty-period">24 месяца</div>
+                        </div>
+                        
+                        <div class="warranty-card">
+                            <div class="warranty-icon">🕒</div>
+                            <h4>Гарантия точности хода</h4>
+                            <p>После обслуживания или ремонта гарантируем точность хода механических часов в пределах -4/+6 секунд в сутки.</p>
+                            <div class="warranty-period">12 месяцев</div>
+                        </div>
+                        
+                        <div class="warranty-card">
+                            <div class="warranty-icon">💧</div>
+                            <h4>Гарантия водонепроницаемости</h4>
+                            <p>После восстановления водозащиты тестируем часы на специальном оборудовании и предоставляем сертификат.</p>
+                            <div class="warranty-period">6 месяцев</div>
+                        </div>
+                        
+                        <div class="warranty-card">
+                            <div class="warranty-icon">🔧</div>
+                            <h4>Гарантия на замену батареек</h4>
+                            <p>При замене элемента питания гарантируем герметичность и работоспособность часов в течение 12 месяцев.</p>
+                            <div class="warranty-period">12 месяцев</div>
+                        </div>
+                        
+                        <div class="warranty-card">
+                            <div class="warranty-icon">✨</div>
+                            <h4>Гарантия на полировку</h4>
+                            <p>На профессиональную полировку и восстановление внешнего вида предоставляем гарантию 6 месяцев.</p>
+                            <div class="warranty-period">6 месяцев</div>
+                        </div>
+                    </div>
+                    
+                    <div class="warranty-features">
+                        <div class="feature">
+                            <div class="feature-icon">✅</div>
+                            <div class="feature-text">
+                                <strong>Бесплатная диагностика</strong>
+                                <span>Перед любым ремонтом</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✅</div>
+                            <div class="feature-text">
+                                <strong>Прозрачные условия</strong>
+                                <span>Все гарантийные условия прописаны в договоре</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✅</div>
+                            <div class="feature-text">
+                                <strong>Быстрое обслуживание</strong>
+                                <span>По гарантии - без очереди</span>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">✅</div>
+                            <div class="feature-text">
+                                <strong>Оригинальные запчасти</strong>
+                                <span>Только сертифицированные комплектующие</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="warranty-conditions">
+                        <h4>Условия гарантии</h4>
+                        <ul>
+                            <li>Гарантия действует только при наличии заполненного гарантийного талона</li>
+                            <li>Не распространяется на повреждения, вызванные неправильной эксплуатацией</li>
+                            <li>Не покрывает естественный износ ремешков, стекол и корпусов</li>
+                            <li>Требует регулярного технического обслуживания (для механических часов)</li>
+                            <li>Действует только при обслуживании в авторизованных сервисных центрах</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О компании ClockOnly</h3>
+                <p>Мы специализируемся на продаже, скупке и ремонте часов различных брендов. Наша компания работает на рынке уже более 10 лет и заслужила доверие тысяч клиентов.</p>
+                <p>Мы предлагаем только оригинальные часы с гарантией качества и профессиональный сервис по их обслуживанию.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Наши услуги</h3>
+                <p>• Продажа новых и б/у часов</p>
+                <p>• Скупка часов известных брендов</p>
+                <p>• Ремонт и обслуживание часов</p>
+                <p>• Оценка стоимости часов онлайн</p>
+                <p>• Срочный выкуп часов</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>📞 Телефон: +7 (777) 77-77-77</p>
+                <p>✉️ Email: clockonly@mail.ru</p>
+                <p>📍 Адрес: г. Владимир, ул. Юбилейная, д. 14А</p>
+                <p>🕒 Режим работы: Пн-Пт 10:00-20:00, Сб-Вс 11:00-18:00</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 ClockOnly. Все права защищены.
+        </div>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

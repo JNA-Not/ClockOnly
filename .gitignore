@@ -1,0 +1,29 @@
+# СЕКРЕТНЫЕ ФАЙЛЫ - НИКОГДА НЕ СОХРАНЯТЬ!
+.env
+.secrets
+passwords.txt
+
+# ВРЕМЕННЫЕ ФАЙЛЫ PYTHON
+__pycache__/
+*.pyc
+
+# ВИРТУАЛЬНЫЕ ОКРУЖЕНИЯ  
+venv/
+env/
+
+# БАЗЫ ДАННЫХ
+*.db
+*.sqlite
+database.db
+
+# НАСТРОЙКИ IDE
+.vscode/
+.idea/
+
+# СИСТЕМНЫЕ ФАЙЛЫ
+.DS_Store
+Thumbs.db
+
+# ЛОГИ
+*.log
+logs/

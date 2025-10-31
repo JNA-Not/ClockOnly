@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Скупка часов - ClockOnly</title>
+    <link rel="stylesheet" href="../css/skup.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="logo">
+            <a href="../html/index.html">
+                <img src="../../static/logo.jpg" alt="ClockOnly - Продажа, скупка и ремонт часов" class="logo-image">
+            </a>
+        </div>
+        <div class="brand">
+            <h1>ClockOnly</h1>
+        </div>
+        <div class="contact-phone">
+            <i>📞</i> +7 (777) 77-77-77
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="scup-main">
+        <!-- Герой-секция -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Скупка часов дорого</h1>
+                    <p class="hero-subtitle">Выгодно продайте свои часы премиальных брендов. Бесплатная оценка онлайн за 15 минут</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">+15%</div>
+                            <div class="stat-text">Выше рыночной цены</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15 мин</div>
+                            <div class="stat-text">Быстрая оценка</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">0₽</div>
+                            <div class="stat-text">Оценка бесплатно</div>
+                        </div>
+                    </div>
+                    <a href="#evaluation" class="cta-button">Оценить часы онлайн</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            
+            <!-- ДОБАВИТЬ ЭТУ КНОПКУ -->
+            <a href="../html/index.html" class="back-button">← Вернуться на главную</a>
+        </div>
+    </div>
+
+        <!-- Бренды которые скупаем -->
+        <section class="brands-section">
+            <div class="container">
+                <h2 class="section-title">Скупаем часы премиальных брендов</h2>
+                <div class="brands-grid">
+                    <div class="brand-card">
+                        <div class="brand-logo">ROLEX</div>
+                        <h3>Rolex</h3>
+                        <p>Submariner, Daytona, Datejust, GMT-Master</p>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">OMEGA</div>
+                        <h3>Omega</h3>
+                        <p>Seamaster, Speedmaster, Constellation</p>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">PATEK</div>
+                        <h3>Patek Philippe</h3>
+                        <p>Nautilus, Aquanaut, Calatrava</p>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">AP</div>
+                        <h3>Audemars Piguet</h3>
+                        <p>Royal Oak, Royal Oak Offshore</p>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">CARTIER</div>
+                        <h3>Cartier</h3>
+                        <p>Tank, Santos, Ballon Bleu</p>
+                    </div>
+                    <div class="brand-card">
+                        <div class="brand-logo">BREITLING</div>
+                        <h3>Breitling</h3>
+                        <p>Navitimer, Chronomat, Superocean</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Процесс скупки -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title">Как происходит скупка</h2>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">📱</div>
+                        <h3>Онлайн-заявка</h3>
+                        <p>Заполните форму оценки или отправьте фото часов нашему эксперту</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">🔍</div>
+                        <h3>Бесплатная оценка</h3>
+                        <p>Наш эксперт оценит ваши часы и предложит лучшую цену</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">🤝</div>
+                        <h3>Встреча и проверка</h3>
+                        <p>Встречаемся в удобном месте, проверяем подлинность часов</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">💵</div>
+                        <h3>Мгновенная оплата</h3>
+                        <p>Сразу после проверки выплачиваем деньги удобным способом</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Форма оценки -->
+        <section class="evaluation-section" id="evaluation">
+            <div class="container">
+                <h2 class="section-title">Оценка часов онлайн</h2>
+                <div class="evaluation-form-container">
+                    <form class="evaluation-form" id="evaluationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="brand">Бренд часов *</label>
+                                <select id="brand" name="brand" required>
+                                    <option value="">Выберите бренд</option>
+                                    <option value="rolex">Rolex</option>
+                                    <option value="omega">Omega</option>
+                                    <option value="patek">Patek Philippe</option>
+                                    <option value="ap">Audemars Piguet</option>
+                                    <option value="cartier">Cartier</option>
+                                    <option value="breitling">Breitling</option>
+                                    <option value="iwc">IWC</option>
+                                    <option value="tagheuer">Tag Heuer</option>
+                                    <option value="other">Другой бренд</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="model">Модель *</label>
+                                <input type="text" id="model" name="model" required placeholder="Например: Submariner">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="year">Год выпуска</label>
+                                <input type="number" id="year" name="year" placeholder="2020" min="1900" max="2024">
+                            </div>
+                            <div class="form-group">
+                                <label for="condition">Состояние</label>
+                                <select id="condition" name="condition">
+                                    <option value="excellent">Отличное</option>
+                                    <option value="good">Хорошее</option>
+                                    <option value="satisfactory">Удовлетворительное</option>
+                                    <option value="needs_repair">Требует ремонта</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Дополнительная информация</label>
+                            <textarea id="description" name="description" rows="4" placeholder="Комплектность, наличие документов, сервисная история..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Фотографии часов</label>
+                            <div class="upload-area" id="uploadArea">
+                                <div class="upload-placeholder">
+                                    <div class="upload-icon">📷</div>
+                                    <p>Перетащите фото сюда или нажмите для выбора</p>
+                                    <span>До 5 фотографий</span>
+                                </div>
+                                <input type="file" id="photos" name="photos" multiple accept="image/*" style="display: none;">
+                            </div>
+                            <div class="uploaded-files" id="uploadedFiles"></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Ваше имя *</label>
+                                <input type="text" id="name" name="name" required placeholder="Иван Иванов">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="+7 (777) 777-77-77">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-button">Получить оценку</button>
+                    </form>
+
+                    <div class="evaluation-info">
+                        <h3>Почему выбирают нас?</h3>
+                        <ul class="benefits-list">
+                            <li>✅ Бесплатная оценка без обязательств</li>
+                            <li>✅ Цена на 15% выше рыночной</li>
+                            <li>✅ Мгновенная оплата наличными или переводом</li>
+                            <li>✅ Выезд эксперта в удобное для вас время</li>
+                            <li>✅ Конфиденциальность и безопасность сделки</li>
+                            <li>✅ Опыт работы с часами более 10 лет</li>
+                        </ul>
+                        
+                        <div class="contact-info">
+                            <h4>Контакты для срочной оценки</h4>
+                            <p>📞 <strong>+7 (777) 77-77-77</strong></p>
+                            <p>✉️ <strong>scup@clockonly.ru</strong></p>
+                            <p>📍 <strong>г. Владимир, ул. Юбилейная, д. 14А</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>О компании ClockOnly</h3>
+                <p>Специализируемся на скупке часов премиальных брендов. Гарантируем лучшие цены и честную оценку.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Услуги скупки</h3>
+                <p>• Скупка Rolex</p>
+                <p>• Скупка Omega</p>
+                <p>• Скупка Patek Philippe</p>
+                <p>• Скупка швейцарских часов</p>
+                <p>• Срочный выкуп</p>
+            </div>
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>📞 Телефон: +7 (777) 77-77-77</p>
+                <p>✉️ Email: scup@clockonly.ru</p>
+                <p>📍 Адрес: г. Владимир, ул. Юбилейная, д. 14А</p>
+                <p>🕒 Режим работы: Пн-Пт 10:00-20:00, Сб-Вс 11:00-18:00</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 ClockOnly. Все права защищены.
+        </div>
+    </footer>
+
+    <script src="../js/skup.js"></script>
+</body>
+</html>

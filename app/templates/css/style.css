@@ -1,0 +1,1288 @@
+/* style.css */
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #F5F7FA;
+    color: #6C757D;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Шапка */
+header {
+    background-color: #1E2A3A;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+.logo-image:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.contact-phone {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0288D1;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.contact-phone:hover {
+    color: #03A9F4;
+}
+
+.contact-phone i {
+    margin-right: 8px;
+}
+
+.brand{
+  font-size: 18px;
+    font-weight: 600;
+    color: #e4e4e4;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;  
+}
+
+/* Основной контент - ИСПРАВЛЕНО: убраны flex свойства */
+main {
+    flex: 1;
+    /* Убраны свойства, которые выравнивали блоки по горизонтали */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    padding: 0; /* Убраны отступы, которые мешали */
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1E2A3A;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+/* Секция циферблата - ПЕРВАЯ */
+.clock-section {
+    padding: 80px 0;
+    background-color: #F8F9FA;
+    width: 100%; /* Добавлено для полной ширины */
+}
+
+.clock-container {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/* Циферблат - увеличенный и светло-серый */
+.clock-face {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e4e4e4 0%, #cacaca 100%);
+    box-shadow: 
+        0 15px 35px rgba(30, 42, 58, 0.08),
+        inset 0 0 0 1px rgba(30, 42, 58, 0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(30, 42, 58, 0.05);
+}
+
+/* Центр циферблата */
+.clock-center {
+    width: 24px;
+    height: 24px;
+    background-color: #0288D1;
+    border-radius: 50%;
+    z-index: 10;
+    box-shadow: 
+        0 0 25px rgba(2, 136, 209, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    position: absolute;
+}
+
+/* Стрелки */
+.clock-hands {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.hour-hand, .minute-hand {
+    position: absolute;
+    background-color: #1E2A3A;
+    border-radius: 4px;
+    transform-origin: bottom center;
+    left: calc(50% - 2px);
+    bottom: 50%;
+    transition: transform 0.3s ease;
+}
+
+.hour-hand {
+    width: 5px;
+    height: 140px;
+    background-color: #1E2A3A;
+}
+
+.minute-hand {
+    width: 3px;
+    height: 200px;
+    background-color: #0288D1;
+}
+
+/* Кнопки циферблата - увеличенные и фиксированные */
+.clock-button {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #00A896;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 
+        0 4px 12px rgba(0, 168, 150, 0.25),
+        0 0 0 1px rgba(0, 168, 150, 0.15);
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 10px;
+    z-index: 15;
+    line-height: 1.3;
+    /* Полностью убрана анимация трансформации */
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clock-button:hover {
+    background-color: #0288D1;
+    box-shadow: 
+        0 6px 20px rgba(2, 136, 209, 0.35),
+        0 0 0 1px rgba(2, 136, 209, 0.25);
+    /* Только цвет и тень плавно меняются */
+}
+
+/* Точное позиционирование кнопок по часам - абсолютные координаты */
+/* 12 часов - верх */
+.button-12 { 
+    top: 50px; 
+    left: 260px; 
+}
+
+/* 1 час */
+.button-1 { 
+    top: 85px; 
+    right: 150px; 
+}
+
+/* 2 часа */
+.button-2 { 
+    top: 170px; 
+    right: 90px; 
+}
+
+/* 3 часа - право */
+.button-3 { 
+    top: 260px; 
+    right: 50px; 
+}
+
+/* 4 часа */
+.button-4 { 
+    bottom: 170px; 
+    right: 90px; 
+}
+
+/* 5 часов */
+.button-5 { 
+    bottom: 90px; 
+    right: 140px; 
+}
+
+/* 6 часов - низ */
+.button-6 { 
+    bottom: 50px; 
+    left: 260px; 
+}
+
+/* 7 часов */
+.button-7 { 
+    bottom: 90px; 
+    left: 140px; 
+}
+
+/* 8 часов */
+.button-8 { 
+    bottom: 170px; 
+    left: 90px; 
+}
+
+/* 9 часов - лево */
+.button-9 { 
+    top: 260px; 
+    left: 50px; 
+}
+
+/* 10 часов */
+.button-10 { 
+    top: 170px; 
+    left: 90px; 
+}
+
+/* 11 часов */
+.button-11 { 
+    top: 90px; 
+    left: 140px; 
+}
+
+/* Деления циферблата */
+.clock-markers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.marker {
+    position: absolute;
+    width: 2px;
+    height: 14px;
+    background-color: #ADB5BD;
+    left: calc(50% - 1px);
+    top: 25px;
+    transform-origin: center 275px;
+}
+
+.marker.main {
+    width: 4px;
+    height: 22px;
+    background-color: #6C757D;
+}
+
+/* Секция преимуществ - ВТОРАЯ */
+.advantages-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #d8d8d8 0%, #d8d8d8 100%);
+    width: 100%; /* Добавлено для полной ширины */
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.advantage-card {
+    background: #FFFFFF;
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(30, 42, 58, 0.05);
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.advantage-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.advantage-card h3 {
+    color: #1E2A3A;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.advantage-card p {
+    color: #6C757D;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Секция новостей - ТРЕТЬЯ */
+.news-section {
+    padding: 80px 0;
+    background-color: #d8d8d8;
+    width: 100%; /* Добавлено для полной ширины */
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.news-card {
+    background: #FFFFFF;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.news-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}
+
+.news-content {
+    padding: 1.5rem;
+}
+
+.news-date {
+    color: #00A896;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.news-title {
+    color: #1E2A3A;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.news-excerpt {
+    color: #6C757D;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.news-button {
+    display: inline-block;
+    background-color: #0288D1;
+    color: #FFFFFF;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.news-button:hover {
+    background-color: #0277BD;
+}
+
+/* Секция каталога - ЧЕТВЕРТАЯ */
+.catalog-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #d8d8d8 0%, #d8d8d8 100%);
+    width: 100%; /* Добавлено для полной ширины */
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.catalog-category {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(30, 42, 58, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalog-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-category h3 {
+    color: #1E2A3A;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid #00A896;
+    padding-bottom: 0.5rem;
+}
+
+.catalog-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+.catalog-category li {
+    margin-bottom: 0.5rem;
+}
+
+.catalog-category a {
+    color: #6C757D;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 0.3rem 0;
+}
+
+.catalog-category a:hover {
+    color: #0288D1;
+    padding-left: 0.5rem;
+}
+
+/* Подвал */
+footer {
+    background-color: #1E2A3A;
+    color: #F5F7FA;
+    padding: 40px 5%;
+    width: 100%; /* Добавлено для полной ширины */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #00A896;
+    font-weight: 600;
+}
+
+.footer-section p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #E9ECEF;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-section ul li:before {
+    content: "•";
+    color: #00A896;
+    position: absolute;
+    left: 0;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #34495e;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ADB5BD;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .advantages-grid,
+    .news-grid,
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .advantage-card {
+        padding: 2rem 1rem;
+    }
+    
+    .news-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .catalog-category {
+        padding: 1.5rem;
+    }
+    
+    .clock-section,
+    .advantages-section,
+    .news-section,
+    .catalog-section {
+        padding: 60px 0;
+    }
+    
+    .clock-container {
+        width: 500px;
+        height: 500px;
+    }
+    
+    /* Позиции для планшетов */
+    .button-12 { top: 35px; left: 195px; }
+    .button-1 { top: 65px; right: 105px; }
+    .button-2 { top: 125px; right: 65px; }
+    .button-3 { top: 195px; right: 35px; }
+    .button-4 { bottom: 125px; right: 65px; }
+    .button-5 { bottom: 65px; right: 105px; }
+    .button-6 { bottom: 35px; left: 195px; }
+    .button-7 { bottom: 65px; left: 105px; }
+    .button-8 { bottom: 125px; left: 65px; }
+    .button-9 { top: 195px; left: 35px; }
+    .button-10 { top: 125px; left: 65px; }
+    .button-11 { top: 65px; left: 105px; }
+    
+    .marker {
+        transform-origin: center 200px;
+    }
+    
+    .logo-image {
+        height: 40px;
+    }
+    
+    .contact-phone {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .advantage-icon {
+        font-size: 3rem;
+    }
+    
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .clock-section,
+    .advantages-section,
+    .news-section,
+    .catalog-section {
+        padding: 40px 0;
+    }
+    
+    .clock-container {
+        width: 380px;
+        height: 380px;
+    }
+    
+    /* Позиции для мобильных */
+    .button-12 { top: 25px; left: 145px; }
+    .button-1 { top: 50px; right: 80px; }
+    .button-2 { top: 95px; right: 50px; }
+    .button-3 { top: 145px; right: 25px; }
+    .button-4 { bottom: 95px; right: 50px; }
+    .button-5 { bottom: 50px; right: 80px; }
+    .button-6 { bottom: 25px; left: 145px; }
+    .button-7 { bottom: 50px; left: 80px; }
+    .button-8 { bottom: 95px; left: 50px; }
+    .button-9 { top: 145px; left: 25px; }
+    .button-10 { top: 95px; left: 50px; }
+    .button-11 { top: 50px; left: 80px; }
+    
+    .marker {
+        transform-origin: center 155px;
+    }
+    
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .logo-image {
+        height: 35px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+/* Блок гарантий - ШЕСТОЙ */
+.warranty-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #d8d8d8 0%, #e8e8e8 100%);
+    width: 100%;
+}
+
+.warranty-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.warranty-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 2rem;
+}
+
+.warranty-intro h3 {
+    color: #1E2A3A;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.warranty-intro p {
+    color: #6C757D;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.warranty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.warranty-card {
+    background: #FFFFFF;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(30, 42, 58, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.warranty-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00A896, #0288D1);
+}
+
+.warranty-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.warranty-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.warranty-card h4 {
+    color: #1E2A3A;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.warranty-card p {
+    color: #6C757D;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.warranty-period {
+    display: inline-block;
+    background: linear-gradient(135deg, #00A896, #0288D1);
+    color: #FFFFFF;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.warranty-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    color: #00A896;
+    flex-shrink: 0;
+}
+
+.feature-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-text strong {
+    color: #1E2A3A;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.feature-text span {
+    color: #6C757D;
+    font-size: 0.9rem;
+}
+
+.warranty-conditions {
+    background: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.warranty-conditions h4 {
+    color: #1E2A3A;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.warranty-conditions ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.warranty-conditions li {
+    color: #6C757D;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.warranty-conditions li::before {
+    content: '•';
+    color: #00A896;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: -0.2rem;
+}
+
+/* Адаптивность для блока гарантий */
+@media (max-width: 768px) {
+    .warranty-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .warranty-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .warranty-features {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    .warranty-conditions {
+        padding: 2rem;
+    }
+    
+    .warranty-intro h3 {
+        font-size: 1.7rem;
+    }
+    
+    .warranty-intro p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .warranty-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .warranty-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .warranty-features {
+        padding: 1.5rem;
+    }
+    
+    .warranty-conditions {
+        padding: 1.5rem;
+    }
+    
+    .warranty-intro {
+        padding: 0 1rem;
+    }
+    
+    .warranty-intro h3 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Блок "О нас" - ПЯТЫЙ - ОБНОВЛЕННЫЙ */
+.about-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #d8d8d8 0%, #e8e8e8 100%);
+    width: 100%;
+}
+
+.about-hero {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: start;
+}
+
+.about-text h3 {
+    color: #1E2A3A;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #6C757D;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.mission, .vision {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid #00A896;
+}
+
+.mission-icon, .vision-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.mission h4, .vision h4 {
+    color: #1E2A3A;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.mission p, .vision p {
+    color: #6C757D;
+    line-height: 1.6;
+}
+
+.about-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.visual-card {
+    background: linear-gradient(135deg, #1E2A3A, #2D3B4E);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(30, 42, 58, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.visual-card:hover {
+    transform: translateY(-5px);
+}
+
+.visual-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.visual-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Статистика - обновленная */
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.stat-card {
+    background: #FFFFFF;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(30, 42, 58, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00A896, #0288D1);
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #0288D1;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.stat-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1E2A3A;
+    margin-bottom: 0.5rem;
+}
+
+.stat-description {
+    color: #6C757D;
+    font-size: 0.9rem;
+}
+
+/* Ценности */
+.values-section {
+    margin: 4rem 0;
+    padding: 3rem 0;
+}
+
+.values-section h3 {
+    text-align: center;
+    color: #1E2A3A;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.value-item {
+    background: #FFFFFF;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(30, 42, 58, 0.05);
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.value-item h4 {
+    color: #1E2A3A;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.value-item p {
+    color: #6C757D;
+    line-height: 1.6;
+}
+
+/* Команда */
+.team-section {
+    margin: 4rem 0;
+    padding: 3rem 0;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+}
+
+.team-section h3 {
+    text-align: center;
+    color: #1E2A3A;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: #FFFFFF;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(30, 42, 58, 0.05);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-photo {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.team-member h4 {
+    color: #1E2A3A;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.member-role {
+    color: #00A896;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.member-bio {
+    color: #6C757D;
+    line-height: 1.6;
+    font-size: 0.9rem;
+}
+
+/* Сертификаты */
+.certificates-section {
+    margin: 4rem 0;
+}
+
+.certificates-section h3 {
+    text-align: center;
+    color: #1E2A3A;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.certificate {
+    background: #FFFFFF;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(30, 42, 58, 0.05);
+}
+
+.certificate:hover {
+    transform: translateY(-5px);
+}
+
+.cert-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.certificate h4 {
+    color: #1E2A3A;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.certificate p {
+    color: #6C757D;
+    line-height: 1.6;
+}
+
+/* Адаптивность для обновленного блока "О нас" */
+@media (max-width: 768px) {
+    .about-hero {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .mission-vision {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .values-grid,
+    .team-grid,
+    .certificates-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .about-text h3 {
+        font-size: 1.8rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .stat-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-text h3 {
+        font-size: 1.6rem;
+    }
+    
+    .mission, .vision {
+        padding: 1.5rem;
+    }
+    
+    .visual-card {
+        padding: 1.5rem;
+    }
+    
+    .value-item,
+    .team-member,
+    .certificate {
+        padding: 2rem 1.5rem;
+    }
+}

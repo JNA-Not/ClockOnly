@@ -5,8 +5,8 @@ load_dotenv()
 
 class Settings(BaseSettings):
     app_name: str = "My App"
-    database_url: str = "sqlite:///./test.db"  # значение по умолчанию
-    secret_key: str = "default-secret-key"     # значение по умолчанию
+    database_url: str = "sqlite:///./test.db"  
+    secret_key: str = "default-secret-key"     
     debug: bool = True
     host: str = "0.0.0.0"
     port: int = 8000
